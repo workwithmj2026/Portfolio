@@ -81,7 +81,7 @@ export default function Page() {
                   exit="exit"
                   className="flex flex-col gap-6"
                 >
-                  <h3 className="font-title text-xl font-bold uppercase tracking-wide text-white border-b border-border-color pb-3 mb-2">
+                  <h3 className="font-title text-xl font-bold uppercase tracking-wide text-foreground border-b border-border-color pb-3 mb-2">
                     Tell me about yourself
                   </h3>
 
@@ -98,7 +98,7 @@ export default function Page() {
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="John Doe"
-                      className="bg-white/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_rgba(0,240,255,0.1)] focus:bg-white/[0.05] rounded-lg p-4 font-sans text-white placeholder-text-muted outline-none transition-all duration-300 w-full"
+                      className="bg-foreground/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_var(--c-accent-glow)] focus:bg-foreground/[0.05] rounded-lg p-4 font-sans text-foreground placeholder:text-text-secondary/40 outline-none transition-all duration-300 w-full"
                       required
                     />
                   </div>
@@ -116,7 +116,7 @@ export default function Page() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="john@example.com"
-                      className="bg-white/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_rgba(0,240,255,0.1)] focus:bg-white/[0.05] rounded-lg p-4 font-sans text-white placeholder-text-muted outline-none transition-all duration-300 w-full"
+                      className="bg-foreground/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_var(--c-accent-glow)] focus:bg-foreground/[0.05] rounded-lg p-4 font-sans text-foreground placeholder:text-text-secondary/40 outline-none transition-all duration-300 w-full"
                       required
                     />
                   </div>
@@ -134,7 +134,7 @@ export default function Page() {
                       value={company}
                       onChange={(e) => setCompany(e.target.value)}
                       placeholder="Optional"
-                      className="bg-white/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_rgba(0,240,255,0.1)] focus:bg-white/[0.05] rounded-lg p-4 font-sans text-white placeholder-text-muted outline-none transition-all duration-300 w-full"
+                      className="bg-foreground/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_var(--c-accent-glow)] focus:bg-foreground/[0.05] rounded-lg p-4 font-sans text-foreground placeholder:text-text-secondary/40 outline-none transition-all duration-300 w-full"
                     />
                   </div>
 
@@ -142,7 +142,7 @@ export default function Page() {
                     <button
                       type="button"
                       onClick={handleNext}
-                      className="w-full sm:w-auto font-sans font-semibold text-background bg-white hover:bg-accent hover:shadow-[0_0_20px_var(--accent-glow)] rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full sm:w-auto font-sans font-semibold text-background bg-foreground hover:bg-accent hover:shadow-[0_0_20px_var(--accent-glow)] rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       Next Step <i className="fa-solid fa-arrow-right"></i>
                     </button>
@@ -160,7 +160,7 @@ export default function Page() {
                   exit="exit"
                   className="flex flex-col gap-6"
                 >
-                  <h3 className="font-title text-xl font-bold uppercase tracking-wide text-white border-b border-border-color pb-3 mb-2">
+                  <h3 className="font-title text-xl font-bold uppercase tracking-wide text-foreground border-b border-border-color pb-3 mb-2">
                     Project Details
                   </h3>
 
@@ -177,7 +177,7 @@ export default function Page() {
                           className={`border rounded-lg py-4 px-2 text-center cursor-pointer transition-all duration-300 relative ${
                             budget === opt
                               ? "border-accent bg-accent/5 text-accent"
-                              : "border-border-color bg-white/[0.03] hover:border-border-hover text-text-secondary"
+                              : "border-border-color bg-foreground/[0.03] hover:border-border-hover text-text-secondary"
                           }`}
                         >
                           <input
@@ -210,7 +210,7 @@ export default function Page() {
                       value={details}
                       onChange={(e) => setDetails(e.target.value)}
                       placeholder="Tell me about your project, goals, and timeline..."
-                      className="bg-white/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_rgba(0,240,255,0.1)] focus:bg-white/[0.05] rounded-lg p-4 font-sans text-white placeholder-text-muted outline-none transition-all duration-300 w-full resize-y"
+                      className="bg-foreground/[0.03] border border-border-color focus:border-accent focus:shadow-[0_0_10px_var(--c-accent-glow)] focus:bg-foreground/[0.05] rounded-lg p-4 font-sans text-foreground placeholder:text-text-secondary/40 outline-none transition-all duration-300 w-full resize-y"
                       required
                     />
                   </div>
@@ -219,13 +219,13 @@ export default function Page() {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="w-full sm:w-auto font-sans font-semibold border border-border-color hover:border-foreground text-text-secondary hover:text-white rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full sm:w-auto font-sans font-semibold border border-border-color hover:border-foreground text-text-secondary hover:text-foreground rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <i className="fa-solid fa-arrow-left"></i> Back
                     </button>
                     <button
                       type="submit"
-                      className="w-full sm:w-auto font-sans font-semibold text-background bg-white hover:bg-accent hover:shadow-[0_0_20px_var(--accent-glow)] rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+                      className="w-full sm:w-auto font-sans font-semibold text-background bg-foreground hover:bg-accent hover:shadow-[0_0_20px_var(--accent-glow)] rounded-full px-8 py-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       Send Request{" "}
                       <i className="fa-solid fa-paper-plane text-xs"></i>
@@ -245,7 +245,7 @@ export default function Page() {
                   className="flex flex-col items-center text-center py-8"
                 >
                   <i className="fa-solid fa-circle-check text-5xl md:text-6xl text-accent mb-6 animate-pulse" />
-                  <h3 className="font-title text-2xl font-bold uppercase tracking-wide text-white mb-3">
+                  <h3 className="font-title text-2xl font-bold uppercase tracking-wide text-foreground mb-3">
                     Request Sent!
                   </h3>
                   <p className="text-text-secondary text-sm md:text-base max-w-[400px] leading-relaxed">

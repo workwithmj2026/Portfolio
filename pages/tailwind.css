@@ -2,50 +2,84 @@
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
+:root {
+  --c-background: #ffffff;
+  --c-foreground: #0c0c0e;
+  --c-card: #f5f5f7;
+  --c-card-hover: #ebebf0;
+  --c-accent: #00838f;
+  --c-accent-glow: rgba(0, 131, 143, 0.15);
+  --c-accent-secondary: #7c00cc;
+  --c-text-secondary: #5c5c62;
+  --c-border-color: rgba(0, 0, 0, 0.08);
+  --c-border-hover: rgba(0, 0, 0, 0.16);
+  --c-scrollbar-track: #f5f5f7;
+  --c-scrollbar-thumb: rgba(0, 0, 0, 0.1);
+  --c-accent-rgb: 0, 131, 143;
+  --c-foreground-rgb: 12, 12, 14;
+}
+
+.dark {
+  --c-background: #0c0c0e;
+  --c-foreground: #ffffff;
+  --c-card: #121215;
+  --c-card-hover: #1b1b20;
+  --c-accent: #00f0ff;
+  --c-accent-glow: rgba(0, 240, 255, 0.15);
+  --c-accent-secondary: #bd00ff;
+  --c-text-secondary: #909095;
+  --c-border-color: rgba(255, 255, 255, 0.08);
+  --c-border-hover: rgba(255, 255, 255, 0.16);
+  --c-scrollbar-track: #0c0c0e;
+  --c-scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --c-accent-rgb: 0, 240, 255;
+  --c-foreground-rgb: 255, 255, 255;
+}
+
 @theme {
   --font-sans:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-title: "Syne", sans-serif;
 
-  --color-background: #0c0c0e;
-  --color-foreground: #ffffff;
-  --color-card: #121215;
-  --color-card-hover: #1b1b20;
-  --color-accent: #00f0ff;
-  --color-accent-glow: rgba(0, 240, 255, 0.15);
-  --color-accent-secondary: #bd00ff;
-  --color-text-secondary: #909095;
-  --color-border-color: rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.16);
+  --color-background: var(--c-background);
+  --color-foreground: var(--c-foreground);
+  --color-card: var(--c-card);
+  --color-card-hover: var(--c-card-hover);
+  --color-accent: var(--c-accent);
+  --color-accent-glow: var(--c-accent-glow);
+  --color-accent-secondary: var(--c-accent-secondary);
+  --color-text-secondary: var(--c-text-secondary);
+  --color-border-color: var(--c-border-color);
+  --color-border-hover: var(--c-border-hover);
 }
 
-/* Global resets & customizations */
-html,
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for fixed 80px navbar */
+}
+
 body {
-  background-color: #0c0c0e;
-  color: #ffffff;
+  background-color: var(--c-background);
+  color: var(--c-foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0c0e;
+  background: var(--c-scrollbar-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--c-scrollbar-thumb);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00f0ff;
+  background: var(--c-accent);
 }
 
-/* Page Transition Animation */
 #page-content {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -54,7 +88,6 @@ body.page-transition #page-content {
   opacity: 0;
 }
 
-/* Infinite loop marquee animation */
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
@@ -68,19 +101,6 @@ body.page-transition #page-content {
   animation: marquee-scroll 25s linear infinite;
 }
 
-/* Hero Color Inversion */
-.hero-inverted {
-  --hero-bg: #f5f5f7;
-  --hero-text: #0c0c0e;
-  --hero-text-secondary: #5c5c62;
-  --hero-accent: #00838f;
-  --hero-border: rgba(0, 0, 0, 0.08);
-  --hero-accent-glow: rgba(0, 131, 143, 0.15);
-  --hero-card-bg: #ffffff;
-  --hero-card-hover: #f0f0f3;
-}
-
-/* Shorthand utilities or adjustments */
 .syne-heading {
   font-family: var(--font-title);
   text-transform: uppercase;

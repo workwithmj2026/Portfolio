@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { ProjectJourney } from "../../components/ProjectJourney";
 
 const homeData = {
   hero: {
@@ -7,10 +8,7 @@ const homeData = {
     heading: "Creative Developer & UX Architect",
     description:
       "Building custom digital experiences with design-first approach. Combining interactive details, robust performance, and visual polish.",
-    counters: [
-      { count: "20+", label: "Projects Completed" },
-      { count: "15+", label: "Happy Clients" },
-    ],
+    counters: [],
   },
   showreel: [
     { title: "Modevelle Custom", desc: "Shopify Ecommerce | UI/UX Design" },
@@ -65,11 +63,68 @@ const homeData = {
       desc: "Adding custom, immersive micro-interactions using GSAP and CSS.",
     },
   ],
+  journey: [
+    {
+      title: "BreatheSpace",
+      category: "Product App",
+      subtext: "Burnout recovery app for overwhelmed professionals. AI stress detection, personalised 5-min breathing resets, mood check-ins, and task re-prioritiser. Soothing lavender + sky blue palette.",
+      role: "Full Product Design & Dev",
+      year: "2026",
+    },
+    {
+      title: "SafeNest",
+      category: "Product App",
+      subtext: "Investment guidance app for everyday savers. Risk profiling quiz, real-time scenario simulation with inflation sliders, plain-English recommendations, and portfolio tracker. Midnight navy + forest green palette.",
+      role: "Full Product Design & Dev",
+      year: "2026",
+    },
+    {
+      title: "Modevelle",
+      category: "Shopify Custom",
+      subtext: "Fully customized Shopify store with unique Liquid coding, product schema optimizations, and custom theme design.",
+      role: "Web Design & Development",
+      year: "2025",
+    },
+    {
+      title: "Interactive Portfolio",
+      category: "React / Next.js",
+      subtext: "Award-winning portfolio experience with Sanity CMS, GSAP scroll animations, and custom page transitions.",
+      role: "Web Development",
+      year: "2025",
+    },
+    {
+      title: "The Shear Room",
+      category: "React / Next.js",
+      subtext: "Complete booking platform with Supabase backend, real-time availability, and immersive scroll interactions.",
+      role: "Web Development",
+      year: "2024",
+    },
+    {
+      title: "Mad World",
+      category: "Shopify Custom",
+      subtext: "Dark-themed ecommerce experience with custom cart interactions and product storytelling.",
+      role: "Web Development",
+      year: "2024",
+    },
+    {
+      title: "Jayesh Portfolio",
+      category: "Webflow / Framer",
+      subtext: "Creative portfolio site with Webflow CMS, GSAP scroll effects, and smooth page-to-page transitions.",
+      role: "Web Design & Development",
+      year: "2024",
+    },
+    {
+      title: "Immersive Sphere",
+      category: "Playground",
+      subtext: "Interactive 3D WebGL experience with shader distortion effects and custom environments using Three.js.",
+      role: "Demo Work",
+      year: "2023",
+    },
+  ],
 };
 
 export default function Page() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
-  const [heroInverted, setHeroInverted] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,58 +151,24 @@ export default function Page() {
       className="w-full flex flex-col"
     >
       {/* Hero Section */}
-      <section
-        className={`min-h-[calc(100vh-80px)] flex items-center relative py-12 lg:py-24 px-8 lg:px-16 border-b transition-colors duration-700 ${heroInverted ? "hero-inverted" : ""}`}
-        style={{
-          backgroundColor: heroInverted ? "var(--hero-bg)" : undefined,
-          color: heroInverted ? "var(--hero-text)" : undefined,
-          borderBottomColor: heroInverted ? "var(--hero-border)" : undefined,
-          backgroundImage: !heroInverted
-            ? "radial-gradient(circle at 70% 30%, rgba(0,240,255,0.05) 0%, transparent 60%)"
-            : undefined,
-        }}
-      >
-        <button
-          type="button"
-          onClick={() => setHeroInverted((v) => !v)}
-          className="absolute top-6 right-8 z-10 flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium uppercase tracking-wider transition-all duration-300"
-          style={{
-            borderColor: heroInverted
-              ? "var(--hero-border)"
-              : "var(--color-border-color)",
-            color: heroInverted
-              ? "var(--hero-text-secondary)"
-              : "var(--color-text-secondary)",
-          }}
-          title={heroInverted ? "Switch to dark" : "Switch to light"}
-        >
-          <span
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${heroInverted ? "bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.5)]" : "bg-cyan-400 shadow-[0_0_8px_rgba(0,240,255,0.5)]"}`}
-          />
-          {heroInverted ? "Dark" : "Light"}
-        </button>
+      <section className="min-h-[calc(100vh-80px)] flex items-center relative py-12 lg:py-24 px-8 lg:px-16 border-b border-border-color">
         <div className="max-w-[1400px] w-full m-auto flex flex-col justify-center gap-12">
           <div className="max-w-[1000px]">
             <motion.span
               variants={itemVariants}
-              className="font-title text-sm uppercase tracking-widest mb-4 inline-block font-semibold"
-              style={{ color: heroInverted ? "var(--hero-accent)" : undefined }}
+              className="font-title text-sm uppercase tracking-widest mb-4 inline-block font-semibold text-accent"
             >
               {homeData.hero.pretitle}
             </motion.span>
             <motion.h1
               variants={itemVariants}
-              className="font-title text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase leading-[0.95] tracking-tighter mb-8"
-              style={{ color: heroInverted ? "var(--hero-text)" : undefined }}
+              className="font-title text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase leading-[0.95] tracking-tighter mb-8 text-foreground"
             >
               {homeData.hero.heading}
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl max-w-[650px] leading-relaxed"
-              style={{
-                color: heroInverted ? "var(--hero-text-secondary)" : undefined,
-              }}
+              className="text-lg md:text-xl max-w-[650px] leading-relaxed text-text-secondary"
             >
               {homeData.hero.description}
             </motion.p>
@@ -155,10 +176,7 @@ export default function Page() {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mt-8 pt-8"
-            style={{
-              borderTopColor: heroInverted ? "var(--hero-border)" : undefined,
-            }}
+            className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mt-8 pt-8 border-t border-border-color"
           >
             <button
               type="button"
@@ -167,43 +185,18 @@ export default function Page() {
                   .getElementById("showreel")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="flex items-center gap-3 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 group"
-              style={{
-                borderColor: heroInverted
-                  ? "var(--hero-border)"
-                  : "var(--color-border-color)",
-                borderWidth: "1px",
-                borderStyle: "solid",
-                color: heroInverted ? "var(--hero-text)" : undefined,
-              }}
+              className="flex items-center gap-3 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 group border border-border-color text-foreground hover:border-accent"
             >
               <span>Scroll</span>
-              <i
-                className="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform duration-300"
-                style={{
-                  color: heroInverted ? "var(--hero-accent)" : undefined,
-                }}
-              />
+              <i className="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform duration-300 text-accent" />
             </button>
             <div className="flex gap-12 lg:gap-16">
               {homeData.hero.counters.map((c) => (
                 <div key={c.label} className="flex flex-col">
-                  <span
-                    className="font-title text-4xl md:text-5xl font-extrabold"
-                    style={{
-                      color: heroInverted ? "var(--hero-accent)" : undefined,
-                    }}
-                  >
+                  <span className="font-title text-4xl md:text-5xl font-extrabold text-accent">
                     {c.count}
                   </span>
-                  <span
-                    className="text-[10px] md:text-xs uppercase tracking-widest mt-1"
-                    style={{
-                      color: heroInverted
-                        ? "var(--hero-text-secondary)"
-                        : undefined,
-                    }}
-                  >
+                  <span className="text-[10px] md:text-xs uppercase tracking-widest mt-1 text-text-secondary">
                     {c.label}
                   </span>
                 </div>
@@ -243,7 +236,7 @@ export default function Page() {
                   0{idx + 1}
                 </span>
                 <div className="z-10 mt-auto">
-                  <h3 className="font-title text-2xl font-extrabold mb-2 tracking-tight group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-title text-2xl font-extrabold mb-2 tracking-tight">
                     {item.title}
                   </h3>
                   <p className="text-xs text-text-secondary leading-relaxed">
@@ -275,14 +268,14 @@ export default function Page() {
                 variants={itemVariants}
                 className="bg-card border border-border-color hover:border-border-hover rounded-xl p-8 transition-colors duration-300"
               >
-                <h3 className="font-title text-lg font-bold mb-6 uppercase tracking-wider text-white border-b border-border-color pb-3">
+                <h3 className="font-title text-lg font-bold mb-6 uppercase tracking-wider text-foreground border-b border-border-color pb-3">
                   {cat.name}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map((skill) => (
                     <span
                       key={skill}
-                      className="text-xs bg-white/[0.03] border border-border-color hover:border-accent hover:text-accent hover:bg-accent/5 rounded-full px-3 py-1.5 transition-all duration-300 text-text-secondary cursor-default"
+                      className="text-xs bg-foreground/[0.03] border border-border-color hover:border-accent hover:text-accent hover:bg-accent/5 rounded-full px-3 py-1.5 transition-all duration-300 text-text-secondary cursor-default"
                     >
                       {skill}
                     </span>
@@ -293,6 +286,9 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      {/* Vertical Project Journey */}
+      <ProjectJourney projects={homeData.journey} />
 
       {/* Services List Preview */}
       <section className="py-24 px-8 lg:px-16 border-b border-border-color">
@@ -314,7 +310,7 @@ export default function Page() {
                 onMouseEnter={() => setHoveredService(idx)}
                 onMouseLeave={() => setHoveredService(null)}
                 onClick={() => (window.location.href = "/services")}
-                className="grid grid-cols-1 lg:grid-cols-[100px_1fr_auto] gap-4 py-8 border-b border-border-color items-center cursor-pointer transition-all duration-300 hover:px-6 hover:bg-white/[0.01]"
+                className="grid grid-cols-1 lg:grid-cols-[100px_1fr_auto] gap-4 py-8 border-b border-border-color items-center cursor-pointer transition-all duration-300 hover:px-6 hover:bg-foreground/[0.01]"
               >
                 <span
                   className={`font-title text-lg transition-colors duration-300 ${hoveredService === idx ? "text-accent" : "text-text-secondary opacity-40"}`}

@@ -1,11 +1,25 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+function getThemeColors() {
+  if (typeof document === "undefined") {
+    return { accent: "#00f0ff", foreground: "#ffffff", background: "#0c0c0e", accentRgb: "0,240,255" };
+  }
+  const styles = getComputedStyle(document.documentElement);
+  return {
+    accent: styles.getPropertyValue("--c-accent").trim() || "#00f0ff",
+    foreground: styles.getPropertyValue("--c-foreground").trim() || "#ffffff",
+    background: styles.getPropertyValue("--c-background").trim() || "#0c0c0e",
+    accentRgb: styles.getPropertyValue("--c-accent-rgb").trim() || "0,240,255",
+  };
+}
 
 export function CustomCursor() {
   const [hoverState, setHoverState] = useState<"none" | "link" | "view">(
     "none",
   );
   const [cursorText, setCursorText] = useState("");
+  const [colors, setColors] = useState(() => getThemeColors());
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -13,6 +27,22 @@ export function CustomCursor() {
   const springConfig = { damping: 40, stiffness: 400, mass: 0.4 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
+
+  const updateColors = useCallback(() => setColors(getThemeColors()), []);
+
+  useEffect(() => {
+    // Initial read
+    updateColors();
+
+    // Watch for theme class changes (next-themes toggles .dark on html)
+    const observer = new MutationObserver(() => updateColors());
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, [updateColors]);
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -24,7 +54,12 @@ export function CustomCursor() {
       const target = e.target as HTMLElement;
       if (!target) return;
 
-      // Check if target or parent has a data-cursor attribute
+      // Headings always get inversion effect — checked before data-cursor
+      if (target.closest("h1, h2, h3, h4, h5, h6")) {
+        setHoverState("link");
+        return;
+      }
+
       const cursorTarget = target.closest("[data-cursor]");
       if (cursorTarget) {
         const type = cursorTarget.getAttribute("data-cursor");
@@ -35,7 +70,6 @@ export function CustomCursor() {
         }
       }
 
-      // Check if hovering over standard clickable elements
       const clickableTarget = target.closest(
         "a, button, .filter-pill, .faq-item, .budget-card",
       );
@@ -56,32 +90,6 @@ export function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
-  // Determine size and styling based on hover state
-  const variants = {
-    none: {
-      width: 12,
-      height: 12,
-      backgroundColor: "#00f0ff",
-      mixBlendMode: "normal" as const,
-      boxShadow: "0 0 10px rgba(0, 240, 255, 0.5)",
-    },
-    link: {
-      width: 48,
-      height: 48,
-      backgroundColor: "#ffffff",
-      mixBlendMode: "difference" as const,
-      boxShadow: "none",
-    },
-    view: {
-      width: 80,
-      height: 80,
-      backgroundColor: "rgba(0, 240, 255, 0.9)",
-      mixBlendMode: "normal" as const,
-      boxShadow: "0 0 25px rgba(0, 240, 255, 0.3)",
-      color: "#0c0c0e",
-    },
-  };
-
   return (
     <motion.div
       className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] flex items-center justify-center -translate-x-1/2 -translate-y-1/2 font-bold font-title select-none text-[10px] tracking-widest text-center"
@@ -90,7 +98,30 @@ export function CustomCursor() {
         y: cursorYSpring,
       }}
       animate={hoverState}
-      variants={variants}
+      variants={{
+        none: {
+          width: 12,
+          height: 12,
+          backgroundColor: colors.accent,
+          mixBlendMode: "normal" as const,
+          boxShadow: `0 0 10px rgba(${colors.accentRgb}, 0.5)`,
+        },
+        link: {
+          width: 48,
+          height: 48,
+          backgroundColor: "#ffffff",
+          mixBlendMode: "difference" as const,
+          boxShadow: "none",
+        },
+        view: {
+          width: 80,
+          height: 80,
+          backgroundColor: `rgba(${colors.accentRgb}, 0.9)`,
+          mixBlendMode: "normal" as const,
+          boxShadow: `0 0 25px rgba(${colors.accentRgb}, 0.3)`,
+          color: colors.background,
+        },
+      }}
       transition={{ type: "spring", stiffness: 500, damping: 28 }}
     >
       {hoverState === "view" && (

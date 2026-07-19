@@ -7,9 +7,22 @@ const workData = {
     "Shopify",
     "React / Next.JS",
     "Webflow / Framer",
+    "Product Apps",
     "Playground",
   ],
   projects: [
+    {
+      title: "BreatheSpace",
+      category: "Product Apps",
+      subtext: "Burnout recovery app — AI stress detection, breathing resets, task re-prioritiser",
+      role: "Full Product Design & Dev",
+    },
+    {
+      title: "SafeNest",
+      category: "Product Apps",
+      subtext: "Investment guidance app — risk profiling, scenario simulation, portfolio tracker",
+      role: "Full Product Design & Dev",
+    },
     {
       title: "Modevelle",
       category: "Shopify",
@@ -141,16 +154,21 @@ export default function Page() {
         </div>
 
         {/* Filters pills row */}
-        <div className="flex gap-3 overflow-x-auto pb-6 mb-12 scrollbar-none border-b border-border-color">
+        <div
+          role="tablist"
+          className="flex gap-3 overflow-x-auto pb-6 mb-12 scrollbar-none border-b border-border-color"
+        >
           {workData.categories.map((cat) => (
             <button
               key={cat}
               type="button"
+              role="tab"
+              aria-selected={activeFilter === cat}
               onClick={() => setActiveFilter(cat)}
               className={`px-6 py-2.5 rounded-full text-xs font-medium transition-all duration-300 whitespace-nowrap cursor-pointer ${
                 activeFilter === cat
-                  ? "bg-white text-background font-semibold shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                  : "bg-white/[0.04] border border-border-color text-text-secondary hover:border-foreground hover:text-white"
+                  ? "bg-foreground text-background font-semibold shadow-[0_0_15px_var(--c-accent-glow)]"
+                  : "bg-foreground/[0.04] border border-border-color text-text-secondary hover:border-foreground hover:text-foreground"
               }`}
             >
               {cat}
@@ -179,7 +197,7 @@ export default function Page() {
                 className="flex flex-col gap-6 group cursor-pointer"
               >
                 {/* Image / Thumbnail wrapper */}
-                <div className="aspect-[1.5] w-full bg-gradient-to-br from-[#1b1b22] to-[#0d0d10] border border-border-color rounded-xl overflow-hidden relative flex items-center justify-center">
+                <div className="aspect-[1.5] w-full bg-gradient-to-br from-card to-background border border-border-color rounded-xl overflow-hidden relative flex items-center justify-center">
                   <div className="absolute inset-0 bg-radial-gradient(circle_at_center,rgba(0,240,255,0.05)_0%,transparent_70%) opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="font-title text-2xl font-extrabold uppercase text-text-secondary opacity-40 group-hover:scale-105 group-hover:text-accent transition-all duration-400 select-none">
                     {proj.title}
@@ -192,7 +210,7 @@ export default function Page() {
                     <span className="text-[10px] uppercase tracking-widest text-text-secondary opacity-50">
                       {proj.category}
                     </span>
-                    <h3 className="font-title text-xl font-bold group-hover:text-accent transition-colors duration-300">
+                    <h3 className="font-title text-xl font-bold">
                       {proj.title}
                     </h3>
                     <span className="text-xs text-text-secondary">

@@ -114,7 +114,7 @@ export default function Page() {
               <motion.div
                 key={item.name}
                 variants={itemVariants}
-                className="grid grid-cols-1 lg:grid-cols-[100px_2fr_3fr] gap-6 py-12 border-b border-border-color group hover:bg-white/[0.01] hover:px-6 transition-all duration-300 items-start"
+                className="grid grid-cols-1 lg:grid-cols-[100px_2fr_3fr] gap-6 py-12 border-b border-border-color group hover:bg-foreground/[0.01] hover:px-6 transition-all duration-300 items-start"
               >
                 <span className="font-title text-lg text-text-secondary opacity-40 group-hover:text-accent transition-colors duration-300">
                   0{idx + 1}

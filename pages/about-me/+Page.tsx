@@ -72,7 +72,7 @@ export default function Page() {
             </motion.p>
             <motion.div
               variants={itemVariants}
-              className="aspect-square max-w-[280px] w-full m-auto bg-gradient-to-br from-accent to-accent-secondary rounded-full flex items-center justify-center shadow-[0_10px_40px_rgba(0,240,255,0.2)]"
+              className="aspect-square max-w-[280px] w-full m-auto bg-gradient-to-br from-accent to-accent-secondary rounded-full flex items-center justify-center shadow-[0_10px_40px_var(--c-accent-glow)]"
             >
               <span className="font-title text-4xl font-extrabold text-background select-none">
                 RS
@@ -117,7 +117,7 @@ export default function Page() {
       </section>
 
       {/* Infinite loop Hobbies Marquee */}
-      <div className="overflow-hidden bg-white/[0.02] border-t border-b border-border-color py-12 w-full relative">
+      <div className="overflow-hidden bg-foreground/[0.02] border-t border-b border-border-color py-12 w-full relative">
         <div className="flex gap-16 w-max animate-marquee">
           {/* Double list to loop seamlessly */}
           {[
@@ -128,7 +128,7 @@ export default function Page() {
             <div
               // biome-ignore lint/suspicious/noArrayIndexKey: intentional duplicate for infinite marquee
               key={`${hobby}-${idx}`}
-              className="font-title text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-white/30 hover:text-accent hover:shadow-glow transition-all duration-300 flex items-center gap-6 cursor-default select-none"
+              className="font-title text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-foreground/20 hover:text-accent hover:shadow-glow transition-all duration-300 flex items-center gap-6 cursor-default select-none"
             >
               <span>{hobby}</span>
               <i className="fa-solid fa-asterisk text-sm opacity-40"></i>
