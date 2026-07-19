@@ -57,7 +57,7 @@ export function PullCord() {
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      const cx = window.innerWidth - 72;
+      const cx = window.innerWidth * 0.83;
       if (ropeRef.current.nodes.length === 0) {
         initRope(cx);
       } else {

@@ -2,30 +2,30 @@ import { motion } from "framer-motion";
 
 const aboutData = {
   narrative: {
-    title: "Creative Developer",
+    title: "AI SaaS Builder & Freelance Engineer, 8+ Years in Industry",
     paragraph:
-      "I bridge the gap between design and technology. Having grown up in a design-driven environment, I understand aesthetics, typography, and structure. I combine this eye for design with clean, performance-optimized, and interactive code to build high-end websites.",
+      "I design and ship AI-powered SaaS products end-to-end. From full-stack web applications to autonomous AI agents, QLoRA fine-tuned models, and production RAG pipelines. My work spans React/Next.js frontends, Python/FastAPI backends, multi-agent orchestration with LangGraph, and desktop plugins in C#/.NET. I operate as an independent builder, turning complex AI systems into polished, production-grade products. Open to collaborating with early-stage startups and founding teams.",
   },
   timeline: [
     {
-      stage: "Journey",
-      text: "Started coding at a young age, developed projects for local clients, transitioned into a software engineering role, and later moved into full-time freelance creative development.",
+      stage: "Engineering Roots",
+      text: "Started as a full-stack developer building web apps with React, Node.js, and PostgreSQL. Built ecommerce platforms, booking systems, and creative portfolios. Expanded into C#/.NET desktop development: WPF, Revit API, Autodesk APS.",
     },
     {
-      stage: "Background",
-      text: "Deeply influenced by creative arts, I studied interface ergonomics, user-centric research, and visual theory. I believe collaboration is the key to creating unique digital products.",
+      stage: "AI & Agents",
+      text: "Pivoted into AI engineering — QLoRA fine-tuning on Llama-3, production RAG pipelines, Neo4j knowledge graphs, and multi-agent orchestration with LangGraph/CrewAI. Built decision-forensics platforms and AI-native content studios.",
     },
     {
       stage: "Formula",
-      text: "Understand client goals -> Design custom wireframes -> Develop interactive prototypes -> Deliver high-performance, polished production sites on schedule.",
+      text: "Problem discovery → Architecture → Clean, testable code → Deploy & monitor. Whether it's a React app, an AI agent, or a .NET plugin — the same engineering rigour applies. Voice agents, knowledge graphs, and MCP integrations are my current focus.",
     },
   ],
   hobbies: [
-    "Music Production 🎵",
-    "Long Motorcycle Rides 🏍️",
-    "Japan & Bali Exploration ✈️",
-    "Cricket & Football Enthusiast ⚽",
-    "Spotify Playlist Curator 🎧",
+    "AI Research Papers \uD83D\uDCDA",
+    "Open Source Contributing \uD83D\uDCBB",
+    "Building Side Projects \uD83D\uDEE0\uFE0F",
+    "Knowledge Graphs & Ontologies \uD83E\uDDD0",
+    "Voice Agent Experiments \uD83C\uDF99\uFE0F",
   ],
 };
 
@@ -59,7 +59,7 @@ export default function Page() {
               About Me
             </span>
             <h1 className="font-title text-4xl md:text-6xl font-extrabold uppercase tracking-tight leading-none">
-              Creative Dev & UX Architect
+              {aboutData.narrative.title}
             </h1>
           </div>
 
@@ -75,7 +75,7 @@ export default function Page() {
               className="aspect-square max-w-[280px] w-full m-auto bg-gradient-to-br from-accent to-accent-secondary rounded-full flex items-center justify-center shadow-[0_10px_40px_var(--c-accent-glow)]"
             >
               <span className="font-title text-4xl font-extrabold text-background select-none">
-                RS
+                MJ
               </span>
             </motion.div>
           </div>
@@ -119,7 +119,6 @@ export default function Page() {
       {/* Infinite loop Hobbies Marquee */}
       <div className="overflow-hidden bg-foreground/[0.02] border-t border-b border-border-color py-12 w-full relative">
         <div className="flex gap-16 w-max animate-marquee">
-          {/* Double list to loop seamlessly */}
           {[
             ...aboutData.hobbies,
             ...aboutData.hobbies,

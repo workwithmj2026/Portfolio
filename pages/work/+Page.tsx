@@ -4,101 +4,86 @@ import { useState } from "react";
 const workData = {
   categories: [
     "All Works",
-    "Shopify",
-    "React / Next.JS",
-    "Webflow / Framer",
-    "Product Apps",
-    "Playground",
+    "AI & Agents",
+    "Web Development",
+    "Desktop & Plugins",
+    "Ecommerce",
   ],
   projects: [
     {
+      title: "Agent OS",
+      category: "AI & Agents",
+      subtext:
+        "Multi-agent orchestration using LangChain and CrewAI with real-time monitoring and event-driven architecture",
+      role: "Architecture & Full Stack Dev",
+    },
+    {
       title: "BreatheSpace",
-      category: "Product Apps",
-      subtext: "Burnout recovery app — AI stress detection, breathing resets, task re-prioritiser",
+      category: "AI & Agents",
+      subtext:
+        "AI burnout recovery app — stress detection, breathing resets, task re-prioritiser",
       role: "Full Product Design & Dev",
+      link: "/breathespace",
     },
     {
       title: "SafeNest",
-      category: "Product Apps",
-      subtext: "Investment guidance app — risk profiling, scenario simulation, portfolio tracker",
+      category: "AI & Agents",
+      subtext:
+        "AI investment guidance — risk profiling, scenario simulation, portfolio tracker",
       role: "Full Product Design & Dev",
+      link: "/safenest",
+    },
+    {
+      title: "X-Ray SDK",
+      category: "AI & Agents",
+      subtext:
+        "Decision-forensics platform — FastAPI, PostgreSQL, Pydantic, production SDK",
+      role: "Architecture & Development",
+    },
+    {
+      title: "ClipForge AI",
+      category: "AI & Agents",
+      subtext:
+        "Video clip generation with AI scoring — Next.js, Python, FFmpeg, Ollama, WebSockets",
+      role: "Full Stack & Video Pipeline",
+    },
+    {
+      title: "SEO Knowledge Graph",
+      category: "AI & Agents",
+      subtext:
+        "Hybrid RAG with Neo4j + pgvector, QLoRA fine-tuned Llama-3 for SEO content",
+      role: "AI Architecture & Development",
+    },
+    {
+      title: "Architectural Detail Library",
+      category: "Web Development",
+      subtext:
+        "RAG-powered knowledge platform — FastAPI, pgvector, React, Tailwind CSS",
+      role: "Full Stack Development",
+    },
+    {
+      title: "AI Audit Engine",
+      category: "AI & Agents",
+      subtext:
+        "Automated AI audit — performance, safety, bias detection, cost optimization",
+      role: "Architecture & Development",
     },
     {
       title: "Modevelle",
-      category: "Shopify",
-      subtext: "Shopify Custom, Ecommerce",
+      category: "Ecommerce",
+      subtext: "Shopify Custom, Ecommerce — premium fashion brand",
       role: "Web Design & Development",
     },
     {
       title: "Mad World",
-      category: "Shopify",
-      subtext: "Shopify Custom, Ecommerce",
+      category: "Ecommerce",
+      subtext: "Shopify Custom, Ecommerce — dark-themed experience",
       role: "Web Development",
-    },
-    {
-      title: "Portfolio '25",
-      category: "React / Next.JS",
-      subtext: "NextJs, Sanity CMS, GSAP",
-      role: "Web Development",
-    },
-    {
-      title: "The Shear Room",
-      category: "React / Next.JS",
-      subtext: "Next.js, Supabase, GSAP",
-      role: "Web Development",
-    },
-    {
-      title: "Jayesh portfolio",
-      category: "Webflow / Framer",
-      subtext: "Webflow, GSAP, scroll-effect",
-      role: "Web Design & Development",
-    },
-    {
-      title: "Depth Scroll",
-      category: "Playground",
-      subtext: "Scroll animation",
-      role: "Demo Work",
-    },
-    {
-      title: "3D Scroll",
-      category: "Playground",
-      subtext: "Scroll animation",
-      role: "Demo Work",
-    },
-    {
-      title: "Hover Effect",
-      category: "Playground",
-      subtext: "Hover effect",
-      role: "Demo Work",
     },
     {
       title: "Immersive Sphere",
-      category: "Playground",
-      subtext: "Hover effect",
-      role: "Demo Work",
-    },
-    {
-      title: "SVG Path",
-      category: "Playground",
-      subtext: "Scroll animation",
-      role: "Demo Work",
-    },
-    {
-      title: "Scroll Video",
-      category: "Playground",
-      subtext: "Scroll animation",
-      role: "Demo Work",
-    },
-    {
-      title: "Section Morph",
-      category: "Playground",
-      subtext: "Scroll animation",
-      role: "Demo Work",
-    },
-    {
-      title: "Image Distortion",
-      category: "Playground",
-      subtext: "Scroll animation",
+      category: "Web Development",
+      subtext: "WebGL & Three.js 3D demonstration",
       role: "Demo Work",
     },
   ],
@@ -195,6 +180,10 @@ export default function Page() {
                 exit="exit"
                 data-cursor="view"
                 className="flex flex-col gap-6 group cursor-pointer"
+                onClick={() => {
+                  if ("link" in proj && proj.link)
+                    window.location.href = proj.link;
+                }}
               >
                 {/* Image / Thumbnail wrapper */}
                 <div className="aspect-[1.5] w-full bg-gradient-to-br from-card to-background border border-border-color rounded-xl overflow-hidden relative flex items-center justify-center">

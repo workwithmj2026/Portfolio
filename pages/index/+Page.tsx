@@ -4,121 +4,172 @@ import { ProjectJourney } from "../../components/ProjectJourney";
 
 const homeData = {
   hero: {
-    pretitle: "Lorem Ipsum Dolor",
-    heading: "Creative Developer & UX Architect",
+    pretitle: "AI SaaS Builder & Freelance Engineer, 8+ Years in Industry",
+    heading: "Full-Stack Engineer & AI Systems Architect",
     description:
-      "Building custom digital experiences with design-first approach. Combining interactive details, robust performance, and visual polish.",
+      "Independent AI SaaS builder and freelance engineer. I design and ship intelligent products end-to-end, from React frontends to multi-agent orchestration, QLoRA fine-tuned models, and production RAG pipelines. Open to collaborating with early-stage startups and founding teams.",
     counters: [],
   },
   showreel: [
-    { title: "Modevelle Custom", desc: "Shopify Ecommerce | UI/UX Design" },
     {
-      title: "Interactive Portfolio '25",
-      desc: "Next.js, Sanity, GSAP animations",
+      title: "BreatheSpace",
+      desc: "AI burnout recovery app | Full product design & dev",
+      href: "/breathespace",
     },
-    { title: "Immersive Sphere", desc: "WebGL and Three.js 3D demonstration" },
+    {
+      title: "SafeNest",
+      desc: "AI investment guidance | Risk profiling & portfolio tracking",
+      href: "/safenest",
+    },
+    {
+      title: "Agent OS Dashboard",
+      desc: "Multi-agent orchestration | Real-time monitoring",
+      href: "/work",
+    },
   ],
   skills: [
     {
-      name: "Creative Dev",
+      name: "Frontend",
       items: [
-        "Next.js",
-        "React",
-        "Three.js",
-        "GSAP",
-        "WebGL",
-        "Webflow",
-        "Framer",
-        "Shopify",
-        "Tailwind",
-        "Git",
+        "React 18/19",
+        "Next.js (App Router)",
+        "TypeScript",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Framer Motion",
+        "Zustand",
+        "React Query",
+        "Chart.js",
+        "CSS/SCSS",
       ],
     },
     {
-      name: "Design",
+      name: "Backend & Data",
       items: [
-        "Figma",
-        "UI/UX Design",
-        "Wireframing",
-        "Prototyping",
-        "Brand Design",
+        "Node.js",
+        "Python",
+        "FastAPI",
+        "Express.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Supabase",
+        "Redis",
+        "Docker",
+        "GCP",
       ],
     },
     {
-      name: "Backend & Cloud",
-      items: ["Node.js", "Express", "MongoDB", "SQL", "Supabase", "Firebase"],
+      name: "AI, LLMs & Agents",
+      items: [
+        "LangChain",
+        "LangGraph",
+        "CrewAI",
+        "OpenAI SDK",
+        "Claude/Anthropic",
+        "RAG Pipelines",
+        "Vector DBs",
+        "QLoRA Fine-Tuning",
+        "MCP",
+        "Ollama",
+      ],
+    },
+    {
+      name: "Desktop & Plugins",
+      items: [
+        "C#",
+        ".NET 8.0",
+        "WPF/XAML",
+        "Revit API",
+        "Autodesk APS",
+        "WiX Installer",
+        "Code Signing",
+      ],
+    },
+    {
+      name: "Infra & Security",
+      items: [
+        "Docker",
+        "CI/CD",
+        "JWT/OAuth2",
+        "RBAC",
+        "RLS Policies",
+        "Multi-Tenant",
+        "WebSockets/SSE",
+        "Structlog",
+      ],
+    },
+    {
+      name: "Knowledge & Voice",
+      items: [
+        "Neo4j",
+        "Knowledge Graphs",
+        "PyTorch",
+        "Hugging Face",
+        "Llama-3",
+        "Voice Agents",
+        "Embeddings",
+        "Search Console API",
+      ],
     },
   ],
   services: [
     {
-      name: "Web Development",
-      desc: "Building high-performance, robust, and custom web applications.",
+      name: "Full-Stack Web Development",
+      desc: "Production React/Next.js apps with TypeScript, Tailwind, ShadCN UI, and robust backend APIs in Node.js, Python/FastAPI, or Hono. Pixel-perfect, performant, and scalable.",
     },
     {
-      name: "UI/UX Design",
-      desc: "Crafting beautiful, user-centered wireframes and visual design layouts.",
+      name: "AI Agent Systems",
+      desc: "Autonomous agents, multi-agent orchestration (LangGraph, CrewAI), stateful workflows, hierarchical sub-agents, and custom MCP tool integrations.",
     },
     {
-      name: "Interactive Animations",
-      desc: "Adding custom, immersive micro-interactions using GSAP and CSS.",
+      name: "LLM Fine-Tuning & RAG",
+      desc: "QLoRA fine-tuning on Llama-3 and other open models. Production RAG pipelines with pgvector, Weaviate, Chroma, and Neo4j knowledge graphs for factual, grounded generation.",
+    },
+    {
+      name: "Desktop & Plugin Development",
+      desc: "Windows desktop applications with C#/.NET, WPF/XAML, Revit API, Autodesk APS integration, and professional installer packaging with code signing.",
     },
   ],
   journey: [
     {
-      title: "BreatheSpace",
-      category: "Product App",
-      subtext: "Burnout recovery app for overwhelmed professionals. AI stress detection, personalised 5-min breathing resets, mood check-ins, and task re-prioritiser. Soothing lavender + sky blue palette.",
-      role: "Full Product Design & Dev",
+      title: "Agent OS",
+      category: "AI Agent Platform",
+      subtext:
+        "Multi-agent orchestration OS with real-time agent monitoring, task delegation, and autonomous workflow execution. LangChain, CrewAI, and custom event-driven architecture.",
+      role: "Full Stack Architecture & Dev",
       year: "2026",
     },
     {
-      title: "SafeNest",
-      category: "Product App",
-      subtext: "Investment guidance app for everyday savers. Risk profiling quiz, real-time scenario simulation with inflation sliders, plain-English recommendations, and portfolio tracker. Midnight navy + forest green palette.",
-      role: "Full Product Design & Dev",
-      year: "2026",
-    },
-    {
-      title: "Modevelle",
-      category: "Shopify Custom",
-      subtext: "Fully customized Shopify store with unique Liquid coding, product schema optimizations, and custom theme design.",
-      role: "Web Design & Development",
+      title: "X-Ray SDK",
+      category: "AI Observability",
+      subtext:
+        "Decision-forensics platform explaining why non-deterministic pipelines make specific decisions. FastAPI, PostgreSQL, Pydantic, production-safe SDK instrumentation.",
+      role: "Architecture & Development",
       year: "2025",
     },
     {
-      title: "Interactive Portfolio",
-      category: "React / Next.js",
-      subtext: "Award-winning portfolio experience with Sanity CMS, GSAP scroll animations, and custom page transitions.",
-      role: "Web Development",
+      title: "ClipForge AI",
+      category: "AI Video",
+      subtext:
+        "Production platform converting long-form videos into high-impact clips using AI scoring. Next.js, Python, FFmpeg, Ollama, PostgreSQL, WebSocket real-time updates.",
+      role: "Full Stack & Video Pipeline",
       year: "2025",
     },
     {
-      title: "The Shear Room",
-      category: "React / Next.js",
-      subtext: "Complete booking platform with Supabase backend, real-time availability, and immersive scroll interactions.",
-      role: "Web Development",
-      year: "2024",
+      title: "SEO Knowledge Graph",
+      category: "RAG & Knowledge Graphs",
+      subtext:
+        "Hybrid RAG system blending pgvector with Neo4j knowledge graphs for factual content. QLoRA fine-tuned Llama-3 for human-like SEO generation.",
+      role: "AI Architecture & Development",
+      year: "2025",
     },
     {
-      title: "Mad World",
-      category: "Shopify Custom",
-      subtext: "Dark-themed ecommerce experience with custom cart interactions and product storytelling.",
-      role: "Web Development",
+      title: "AI Audit Engine",
+      category: "AI Audits",
+      subtext:
+        "Automated AI system audit platform scanning for performance regressions, safety violations, bias patterns, and cost inefficiencies. Custom evaluation pipelines.",
+      role: "Architecture & Development",
       year: "2024",
-    },
-    {
-      title: "Jayesh Portfolio",
-      category: "Webflow / Framer",
-      subtext: "Creative portfolio site with Webflow CMS, GSAP scroll effects, and smooth page-to-page transitions.",
-      role: "Web Design & Development",
-      year: "2024",
-    },
-    {
-      title: "Immersive Sphere",
-      category: "Playground",
-      subtext: "Interactive 3D WebGL experience with shader distortion effects and custom environments using Three.js.",
-      role: "Demo Work",
-      year: "2023",
     },
   ],
 };
@@ -203,49 +254,6 @@ export default function Page() {
               ))}
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Selected Works Showreel */}
-      <section
-        id="showreel"
-        className="py-24 px-8 lg:px-16 border-b border-border-color overflow-hidden"
-      >
-        <div className="max-w-[1400px] w-full m-auto">
-          <div className="mb-16">
-            <span className="font-title text-xs uppercase tracking-widest text-accent mb-2 inline-block">
-              Showcase
-            </span>
-            <h2 className="font-title text-3xl md:text-5xl font-extrabold uppercase">
-              Selected Works
-            </h2>
-          </div>
-
-          {/* Draggable/Scrollable Showreel container */}
-          <div className="flex gap-8 overflow-x-auto pb-6 scrollbar-none snap-x snap-mandatory">
-            {homeData.showreel.map((item, idx) => (
-              <motion.div
-                key={item.title}
-                variants={itemVariants}
-                data-cursor="view"
-                onClick={() => (window.location.href = "/work")}
-                className="flex-shrink-0 w-[300px] sm:w-[400px] lg:w-[450px] h-[320px] bg-card border border-border-color hover:border-accent hover:-translate-y-2 rounded-xl p-8 flex flex-col justify-between relative overflow-hidden transition-all duration-300 cursor-pointer snap-start group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="font-title text-lg font-bold text-text-secondary opacity-40">
-                  0{idx + 1}
-                </span>
-                <div className="z-10 mt-auto">
-                  <h3 className="font-title text-2xl font-extrabold mb-2 tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-text-secondary leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

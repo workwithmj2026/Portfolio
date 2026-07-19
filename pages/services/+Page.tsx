@@ -5,66 +5,66 @@ const servicesData = {
   heading: "Comprehensive Services",
   capabilities: [
     {
-      name: "Web Development",
-      desc: "Building high-performance, robust, and custom web applications utilizing modern stacks like React, Next.js, and Node.js. Tailored for scalability and speed.",
+      name: "Full-Stack Web Development",
+      desc: "Production React/Next.js (App Router) applications with TypeScript, Zustand, React Query, Tailwind CSS, ShadCN UI. Backend APIs in Node.js, FastAPI, or Hono with PostgreSQL, MongoDB, Supabase.",
     },
     {
-      name: "UI/UX Design",
-      desc: "Crafting beautiful, user-centered wireframes and visual design layouts in Figma. Mapping optimal user flows to increase conversion and interaction rate.",
+      name: "AI Agent Systems",
+      desc: "Autonomous agents and multi-agent orchestration using LangGraph (ReAct Agents, Stateful Workflows, Hierarchical Sub-Agents), CrewAI, and MCP-based tool integrations. Event-driven architectures with human-in-the-loop.",
     },
     {
-      name: "Shopify Development",
-      desc: "Creating fully customized Shopify stores with unique Liquid coding, product schema optimizations, and custom theme designs for ecommerce success.",
+      name: "LLM Fine-Tuning & RAG",
+      desc: "QLoRA fine-tuning on Llama-3 and other open models. Production RAG pipelines with pgvector, Weaviate, Chroma, FAISS, and Neo4j knowledge graphs. Embedding strategies, re-ranking, and summarization.",
     },
     {
-      name: "No Code (Webflow & Framer)",
-      desc: "Developing visual-first web platforms inside Webflow and Framer. Seamless responsive builds combined with powerful CMS capabilities.",
+      name: "Multi-LLM Integration",
+      desc: "Experience across OpenAI, Anthropic (Claude), AWS Bedrock, Google Vertex AI, Groq, and Ollama. Provider-agnostic architecture design with fallback and cost optimization.",
     },
     {
-      name: "Interactive Animations",
-      desc: "Adding custom, immersive micro-interactions using GSAP, CSS, and keyframe loops to capture user attention and tell stories.",
+      name: "AI Observability & Audits",
+      desc: "Decision-forensics platforms explaining non-deterministic pipeline behavior. AI system audits covering performance, safety, bias detection, and compliance. Custom evaluation pipelines.",
     },
     {
-      name: "3D Experiences",
-      desc: "Integrating interactive 3D WebGL scenes, shader distortion effects, and custom environments using Three.js and React Three Fiber.",
+      name: "Desktop & Plugin Development",
+      desc: "Windows desktop applications with C#/.NET Framework 4.8 / .NET 8.0, WPF/XAML, Revit API, Autodesk APS (Design Automation, OSS). Professional installers with WiX/Inno Setup and code signing.",
     },
     {
-      name: "Backend & CMS",
-      desc: "Configuring robust headless CMS backends like Sanity, Strapi, or Supabase. Provisioning structured database schemas and REST/GraphQL APIs.",
+      name: "Backend & Infrastructure",
+      desc: "REST APIs, GraphQL APIs, WebSockets, SSE. PostgreSQL schema design, query optimization, indexing, RLS, triggers. Docker containerization, CI/CD pipelines, GCP deployment.",
     },
     {
-      name: "SEO Optimization",
-      desc: "Auditing and optimizing technical speed scores, search indexing, meta tags, and structured schema markup to rank first on search engines.",
+      name: "Security & Multi-Tenant",
+      desc: "JWT authentication, OAuth2, Row-Level Security, Multi-Tenant data isolation, Role-Based Access Control, API security, and secure token management.",
     },
     {
-      name: "AI Search Optimization (AISO)",
-      desc: "Structuring and indexing site contents so modern AI engines (like ChatGPT, Gemini, and Perplexity) can crawl, identify, and reference your business easily.",
+      name: "Knowledge Graphs & Voice",
+      desc: "Neo4j knowledge graph design, voice agent systems, semantic search with embeddings, and hybrid RAG architectures blending vector + graph databases for relationship-aware generation.",
     },
   ],
   faq: [
     {
-      q: "What is your project timeline?",
-      a: "Typically, a website project takes between 2 to 6 weeks, depending on the complexity of design and features required.",
+      q: "What AI technologies do you work with?",
+      a: "LangChain/LangGraph for agent orchestration, OpenAI SDK, Anthropic Claude, AWS Bedrock, Google Vertex AI, Groq, Ollama. QLoRA fine-tuning, RAG pipelines with pgvector/Weaviate/Chroma/FAISS, and Neo4j knowledge graphs.",
     },
     {
-      q: "Do you design websites in Figma first?",
-      a: "Yes. Every project begins with mapping UX workflows, designing layouts, and prototype wireframes in Figma for client review before coding.",
+      q: "What's your development process?",
+      a: "Problem discovery → architecture design → iterative build with check-ins → deploy with monitoring. Agile, structured, and transparent about timelines from the start.",
     },
     {
-      q: "Which platforms do you build on?",
-      a: "I specialize in Next.js, React, Shopify Custom Liquid, and No-Code platforms like Webflow and Framer.",
+      q: "Do you work with startups or enterprises?",
+      a: "Both. I've built MVPs for startups and production AI systems for established businesses. The scale adapts — the engineering rigour is constant.",
     },
     {
-      q: "Can you integrate custom 3D animations?",
-      a: "Absolutely. I implement 3D experiences using Three.js, WebGL, and animate them dynamically using GSAP ScrollTrigger.",
+      q: "What desktop/plugin experience do you have?",
+      a: "C#/.NET WPF apps, Revit API, Autodesk APS (Design Automation + OSS). Professional installers with WiX/Inno Setup and code signing. Production Windows desktop tooling.",
     },
     {
-      q: "Do you provide post-launch support?",
-      a: "Yes, I offer a support window post-launch, alongside options for monthly maintenance retainers.",
+      q: "How do you handle agentic workflows?",
+      a: "Event-driven architectures with LangGraph ReAct agents, hierarchical sub-agents, and MCP tool connections. Agents communicate through a central orchestrator with human-in-the-loop fallbacks and full observability.",
     },
     {
-      q: "What is AI Search Optimization (AISO)?",
-      a: "It involves structuring and indexing your content so AI engines like Perplexity, ChatGPT, and Gemini find, extract, and reference your business easily.",
+      q: "What's your typical turnaround?",
+      a: "Small features: 1-2 weeks. Full web apps: 4-8 weeks. AI agent systems: 6-12 weeks. Desktop plugin projects: 4-10 weeks depending on API complexity.",
     },
   ],
 };

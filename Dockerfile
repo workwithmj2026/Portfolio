@@ -1,4 +1,3 @@
-# Stage 1: Build (Node — Vite needs Node compat)
 FROM node:22-alpine AS builder
 WORKDIR /app
 
@@ -8,17 +7,17 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# Stage 2: Production Runtime (Deno — no node_modules needed)
-FROM denoland/deno:alpine AS runner
+FROM node:22-alpine
 WORKDIR /app
 
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/server ./server
-COPY --from=builder /app/server.entry.deno.ts ./
-COPY --from=builder /app/deno.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./
 
-EXPOSE 3000
+ENV PORT=8000
+ENV NODE_ENV=production
 
-USER deno
+EXPOSE 8000
 
-CMD ["run", "--allow-net", "--allow-read=./dist,./server", "--allow-env", "server.entry.deno.ts"]
+CMD ["node", "./dist/server/index.mjs"]

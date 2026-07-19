@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { ThemeProvider, useTheme } from "next-themes";
 import type React from "react";
 import { useEffect, useState } from "react";
-import { ThemeProvider, useTheme } from "next-themes";
 import { usePageContext } from "vike-react/usePageContext";
+import { Chatbot } from "../components/Chatbot";
 import { CustomCursor } from "../components/CustomCursor";
 import { PullCord } from "../components/PullCord";
 import "./tailwind.css";
@@ -10,6 +11,10 @@ import "./Layout.css";
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
   return (
     <button
       type="button"
@@ -18,7 +23,9 @@ function ThemeToggle() {
       aria-label="Toggle theme"
     >
       <i
-        className={`fa-solid text-sm text-text-secondary transition-all duration-300 ${resolvedTheme === "dark" ? "fa-sun" : "fa-moon"}`}
+        className={`fa-solid text-sm text-text-secondary transition-all duration-300 ${
+          !mounted ? "fa-moon" : resolvedTheme === "dark" ? "fa-sun" : "fa-moon"
+        }`}
       />
     </button>
   );
@@ -52,6 +59,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <div className="flex flex-col min-h-screen bg-background text-foreground selection:bg-accent selection:text-background relative">
         <CustomCursor />
+        <Chatbot />
         <PullCord />
 
         <nav className="fixed top-0 left-0 w-full h-20 px-8 lg:px-16 flex justify-between items-center z-[100] backdrop-blur-md border-b border-border-color bg-background/70">
@@ -60,7 +68,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               href="/"
               className="font-title font-bold text-2xl uppercase tracking-tighter hover:text-accent transition-colors duration-300"
             >
-              RS
+              MJ
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -100,7 +108,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             >
               <div className="border-b border-border-color pb-4">
                 <span className="font-title text-xs uppercase tracking-widest text-text-secondary">
-                  Design First Developer
+                  AI SaaS Builder · 8+ Years in Industry · Bangalore
                 </span>
               </div>
 
@@ -193,13 +201,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         <footer className="w-full flex flex-col">
           <a
-            href="/contact"
+            href="/book-a-call"
             className="group block w-full py-16 px-8 lg:px-16 bg-card border-b border-border-color hover:bg-card-hover transition-colors duration-400"
           >
             <div className="max-w-[1400px] m-auto flex justify-between items-center">
               <span className="font-title text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight leading-none transition-all duration-300 flex justify-between w-full items-center">
-                Let&apos;s work together
-                <i className="fa-solid fa-arrow-right-long transition-transform duration-400 group-hover:translate-x-6 text-2xl md:text-4xl lg:text-5xl group-hover:text-accent"></i>
+                Book a Call
+                <i className="fa-solid fa-calendar-check transition-transform duration-400 group-hover:translate-x-6 text-2xl md:text-4xl lg:text-5xl group-hover:text-accent"></i>
               </span>
             </div>
           </a>

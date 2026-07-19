@@ -3,7 +3,12 @@ import { useCallback, useEffect, useState } from "react";
 
 function getThemeColors() {
   if (typeof document === "undefined") {
-    return { accent: "#00f0ff", foreground: "#ffffff", background: "#0c0c0e", accentRgb: "0,240,255" };
+    return {
+      accent: "#00f0ff",
+      foreground: "#ffffff",
+      background: "#0c0c0e",
+      accentRgb: "0,240,255",
+    };
   }
   const styles = getComputedStyle(document.documentElement);
   return {
@@ -20,6 +25,8 @@ export function CustomCursor() {
   );
   const [cursorText, setCursorText] = useState("");
   const [colors, setColors] = useState(() => getThemeColors());
+  const [visible, setVisible] = useState(true);
+  const touchRef = useRef(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -30,6 +37,7 @@ export function CustomCursor() {
 
   const updateColors = useCallback(() => setColors(getThemeColors()), []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: refs and stable state
   useEffect(() => {
     // Initial read
     updateColors();
@@ -45,12 +53,22 @@ export function CustomCursor() {
   }, [updateColors]);
 
   useEffect(() => {
+    // Hide on touch devices
+    const handleTouch = () => {
+      touchRef.current = true;
+      setVisible(false);
+    };
+    window.addEventListener("touchstart", handleTouch, { once: true });
+
     const moveCursor = (e: MouseEvent) => {
+      if (touchRef.current) return;
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
+      if (!visible) setVisible(true);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
+      if (touchRef.current) return;
       const target = e.target as HTMLElement;
       if (!target) return;
 
@@ -90,9 +108,11 @@ export function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
+  if (!visible) return null;
+
   return (
     <motion.div
-      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] flex items-center justify-center -translate-x-1/2 -translate-y-1/2 font-bold font-title select-none text-[10px] tracking-widest text-center"
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] items-center justify-center -translate-x-1/2 -translate-y-1/2 font-bold font-title select-none text-[10px] tracking-widest text-center hidden md:flex"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
