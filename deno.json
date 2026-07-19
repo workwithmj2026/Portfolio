@@ -1,0 +1,30 @@
+{
+  "tasks": {
+    "dev": "deno run -A npm:vike dev",
+    "build": "deno run -A npm:vike build",
+    "preview": "deno task build && deno run --allow-net --allow-read=./dist,./server --allow-env server.entry.deno.ts",
+    "lint": "deno run -A npm:@biomejs/biome lint --write .",
+    "format": "deno run -A npm:@biomejs/biome format --write .",
+    "drizzle:generate": "deno run -A npm:drizzle-kit generate",
+    "drizzle:migrate": "deno run -A npm:drizzle-kit migrate",
+    "drizzle:studio": "deno run -A npm:drizzle-kit studio",
+    "storybook": "deno run -A npm:storybook dev -p 6006",
+    "prod": "deno task build && deno run --allow-net --allow-read=./dist,./server --allow-env server.entry.deno.ts"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  },
+  "lint": {
+    "rules": {
+      "exclude": ["no-sloppy-imports"]
+    }
+  },
+  "imports": {
+    "@/*": "./*",
+    "@std/http/": "jsr:@std/http@^1/"
+  },
+  "nodeModulesDir": "auto"
+}

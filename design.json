@@ -1,0 +1,400 @@
+{
+  "designSystem": {
+    "colors": {
+      "background": "#0e0e10",
+      "surface": "#16161a",
+      "surfaceHover": "#1f1f24",
+      "border": "#2c2c35",
+      "text": {
+        "primary": "#ffffff",
+        "secondary": "#8e8e93",
+        "muted": "#5c5c62",
+        "accent": "#00bcd4"
+      },
+      "shadow": "rgba(0, 0, 0, 0.4)"
+    },
+    "typography": {
+      "fontFamily": "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+      "scale": {
+        "xs": "0.75rem",
+        "sm": "0.875rem",
+        "base": "1rem",
+        "lg": "1.125rem",
+        "xl": "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "1.875rem",
+        "4xl": "2.25rem",
+        "5xl": "3rem",
+        "6xl": "4rem"
+      },
+      "lineHeights": {
+        "none": 1,
+        "tight": 1.2,
+        "snug": 1.35,
+        "normal": 1.5,
+        "relaxed": 1.625,
+        "loose": 2
+      },
+      "weights": {
+        "light": 300,
+        "regular": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      }
+    },
+    "spacing": {
+      "scale": {
+        "1": "0.25rem",
+        "2": "0.5rem",
+        "3": "0.75rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "8": "2rem",
+        "10": "2.5rem",
+        "12": "3rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem"
+      }
+    },
+    "transitions": {
+      "default": "all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)",
+      "slow": "all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)",
+      "drawer": "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)"
+    }
+  },
+  "layout": {
+    "navbar": {
+      "logo": {
+        "text": "RS",
+        "target": "/"
+      },
+      "menuTrigger": {
+        "label": "Menu Button",
+        "action": "Toggle Drawer Menu"
+      }
+    },
+    "drawerMenu": {
+      "tagline": "Design First Developer",
+      "navigation": [
+        { "name": "Home", "target": "/" },
+        { "name": "Work", "target": "/work" },
+        { "name": "Services", "target": "/services" },
+        { "name": "FAQ", "target": "/services#faq" },
+        { "name": "About me", "target": "/about-me" },
+        { "name": "Contact", "target": "/contact" }
+      ],
+      "footer": {
+        "email": "hello.roshansahu@gmail.com",
+        "whatsapp": "https://wa.me/918770649985",
+        "social": {
+          "linkedin": "#",
+          "instagram": "#"
+        }
+      }
+    },
+    "footer": {
+      "banner": {
+        "heading": "Let's work together",
+        "target": "/contact"
+      },
+      "contacts": {
+        "email": "hello.roshansahu@gmail.com",
+        "whatsapp": "https://wa.me/918770649985",
+        "socials": [
+          { "platform": "LinkedIn", "url": "#" },
+          { "platform": "Instagram", "url": "#" }
+        ]
+      }
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "heading": "Creative Developer & UX Architect",
+        "description": "Building custom digital experiences with design-first approach.",
+        "scrollIndicator": "Scroll",
+        "counters": [
+          { "count": "20+", "label": "Projects Completed" },
+          { "count": "15+", "label": "Happy Clients" }
+        ]
+      },
+      "workShowreel": {
+        "title": "Selected Works",
+        "layout": "Horizontal Scroll Showreel",
+        "items": [
+          {
+            "title": "Brand Ecommerce Custom",
+            "description": "Shopify Ecommerce | UI/UX"
+          },
+          {
+            "title": "Interactive Portfolio '25",
+            "description": "Next.js, Sanity, GSAP"
+          },
+          {
+            "title": "Interactive 3D Sphere",
+            "description": "WebGL Scroll Experience"
+          }
+        ]
+      },
+      "skillsShowcase": {
+        "title": "Skills & Technologies",
+        "categories": [
+          {
+            "name": "Creative Dev",
+            "items": [
+              "Next.js",
+              "React",
+              "Three.js",
+              "GSAP",
+              "WebGL",
+              "Webflow",
+              "Framer",
+              "Shopify",
+              "Tailwind",
+              "Git"
+            ]
+          },
+          {
+            "name": "Design",
+            "items": [
+              "Figma",
+              "UI/UX Design",
+              "Wireframing",
+              "Prototyping",
+              "Brand Design"
+            ]
+          },
+          {
+            "name": "Backend & Cloud",
+            "items": [
+              "Node.js",
+              "Express",
+              "MongoDB",
+              "SQL",
+              "Supabase",
+              "Firebase"
+            ]
+          }
+        ]
+      },
+      "servicesPreview": {
+        "title": "What I Do",
+        "items": [
+          {
+            "name": "Web Development",
+            "desc": "Building custom, fast, and scalable web apps."
+          },
+          {
+            "name": "UI/UX Design",
+            "desc": "Designing stunning user-centric interfaces."
+          },
+          {
+            "name": "Interactive Animations",
+            "desc": "Bringing websites to life with GSAP & WebGL."
+          }
+        ]
+      }
+    },
+    "work": {
+      "filters": [
+        "All Works",
+        "Shopify",
+        "React / Next.JS",
+        "Webflow / Framer",
+        "Playground"
+      ],
+      "projects": [
+        {
+          "title": "Modevelle",
+          "category": "Shopify",
+          "subtext": "Shopify Custom, Ecommerce",
+          "role": "Web Design & Development"
+        },
+        {
+          "title": "Mad World",
+          "category": "Shopify",
+          "subtext": "Shopify Custom, Ecommerce",
+          "role": "Web Development"
+        },
+        {
+          "title": "Portfolio '25",
+          "category": "React / Next.JS",
+          "subtext": "NextJs, Sanity CMS, GSAP",
+          "role": "Web Development"
+        },
+        {
+          "title": "The Shear Room",
+          "category": "React / Next.JS",
+          "subtext": "Next.js, Supabase, GSAP",
+          "role": "Web Development"
+        },
+        {
+          "title": "Jayesh portfolio",
+          "category": "Webflow / Framer",
+          "subtext": "Webflow, GSAP, scroll-effect",
+          "role": "Web Design & Development"
+        },
+        {
+          "title": "Depth Scroll",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        },
+        {
+          "title": "3D Scroll",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        },
+        {
+          "title": "Hover Effect",
+          "category": "Playground",
+          "subtext": "Hover effect",
+          "role": "Demo Work"
+        },
+        {
+          "title": "Immersive Sphere",
+          "category": "Playground",
+          "subtext": "Hover effect",
+          "role": "Demo Work"
+        },
+        {
+          "title": "SVG Path Animation",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        },
+        {
+          "title": "Scroll Video Playback",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        },
+        {
+          "title": "Section Morphing",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        },
+        {
+          "title": "Image Distortion",
+          "category": "Playground",
+          "subtext": "Scroll animation",
+          "role": "Demo Work"
+        }
+      ]
+    },
+    "services": {
+      "heading": "Comprehensive Services",
+      "capabilities": [
+        "Web Development",
+        "UI/UX Design",
+        "Shopify Development",
+        "No Code (Webflow & Framer)",
+        "Interactive Animations",
+        "3D Experiences",
+        "Backend & CMS",
+        "SEO Optimization",
+        "AI Search Optimization (AISO)"
+      ],
+      "faq": [
+        {
+          "q": "What is your project timeline?",
+          "a": "Typically, a website project takes between 2 to 6 weeks, depending on the complexity of design and features required."
+        },
+        {
+          "q": "Do you design websites in Figma first?",
+          "a": "Yes. Every project begins with mapping UX workflows, designing layouts, and prototype wireframes in Figma for client review before coding."
+        },
+        {
+          "q": "Which platforms do you build on?",
+          "a": "I specialize in Next.js, React, Shopify Custom Liquid, and No-Code platforms like Webflow and Framer."
+        },
+        {
+          "q": "Can you integrate custom 3D animations?",
+          "a": "Absolutely. I implement 3D experiences using Three.js, WebGL, and animate them dynamically using GSAP ScrollTrigger."
+        },
+        {
+          "q": "Do you provide post-launch support?",
+          "a": "Yes, I offer a support window post-launch, alongside options for monthly maintenance retainers."
+        },
+        {
+          "q": "What is AI Search Optimization (AISO)?",
+          "a": "It involves structuring and indexing your content so AI engines like Perplexity, ChatGPT, and Gemini find, extract, and reference your business easily."
+        }
+      ]
+    },
+    "aboutMe": {
+      "narrative": {
+        "title": "Creative Developer",
+        "paragraph": "I bridge the gap between design and technology. Having grown up in a design-driven environment, I understand aesthetics, typography, and structure. I combine this eye for design with clean, performance-optimized, and interactive code to build high-end websites."
+      },
+      "timeline": [
+        {
+          "stage": "Journey",
+          "text": "Started coding at a young age, developed projects for local clients, transitioned into a software engineering role, and later moved into full-time freelance creative development."
+        },
+        {
+          "stage": "Background",
+          "text": "Deeply influenced by creative arts, I studied interface ergonomics, user-centric research, and visual theory. I believe collaboration is the key to creating unique digital products."
+        },
+        {
+          "stage": "Formula",
+          "text": "Understand client goals -> Design custom wireframes -> Develop interactive prototypes -> Deliver high-performance, polished production sites on schedule."
+        }
+      ],
+      "hobbies": [
+        "Music Production",
+        "Long Motorcycle Rides",
+        "Japan & Bali Exploration",
+        "Cricket & Football Enthusiast"
+      ]
+    },
+    "contact": {
+      "multistepForm": {
+        "step1": {
+          "title": "Tell me about yourself",
+          "fields": [
+            {
+              "id": "contact-name",
+              "label": "Your Name",
+              "type": "text",
+              "placeholder": "John Doe",
+              "required": true
+            },
+            {
+              "id": "contact-email",
+              "label": "Your Email",
+              "type": "email",
+              "placeholder": "john@example.com",
+              "required": true
+            },
+            {
+              "id": "contact-company",
+              "label": "Company Name",
+              "type": "text",
+              "placeholder": "Optional",
+              "required": false
+            }
+          ]
+        },
+        "step2": {
+          "title": "Project Details",
+          "budget": {
+            "label": "Estimated Budget",
+            "options": ["under $5k", "$5k - $10k", "over $10k"]
+          },
+          "details": {
+            "id": "contact-details",
+            "label": "What are you looking to build?",
+            "placeholder": "Tell me about your project, goals, and timeline...",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}
