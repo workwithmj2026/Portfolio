@@ -57,10 +57,9 @@ export default function Page() {
 
       {/* Distant lamps */}
       <div className="absolute inset-0 z-[1]">
-        {lamps.map((l, i) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: static lamps array
+        {lamps.map((l) => (
           <div
-            key={i}
+            key={`lamp-${l.top}-${l.left}`}
             className="absolute rounded-full"
             style={{
               top: l.top,

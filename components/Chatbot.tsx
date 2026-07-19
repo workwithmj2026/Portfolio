@@ -120,10 +120,9 @@ export function Chatbot() {
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-3">
-              // biome-ignore lint/suspicious/noArrayIndexKey: stable message order
-              {messages.map((msg, i) => (
+              {messages.map((msg) => (
                 <div
-                  key={`${msg.role}-${i}`}
+                  key={msg.role + messages.indexOf(msg)}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div

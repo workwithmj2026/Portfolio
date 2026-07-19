@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function getThemeColors() {
   if (typeof document === "undefined") {
@@ -37,23 +37,17 @@ export function CustomCursor() {
 
   const updateColors = useCallback(() => setColors(getThemeColors()), []);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: refs and stable state
   useEffect(() => {
-    // Initial read
     updateColors();
-
-    // Watch for theme class changes (next-themes toggles .dark on html)
     const observer = new MutationObserver(() => updateColors());
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
-
     return () => observer.disconnect();
   }, [updateColors]);
 
   useEffect(() => {
-    // Hide on touch devices
     const handleTouch = () => {
       touchRef.current = true;
       setVisible(false);
@@ -72,7 +66,6 @@ export function CustomCursor() {
       const target = e.target as HTMLElement;
       if (!target) return;
 
-      // Headings always get inversion effect — checked before data-cursor
       if (target.closest("h1, h2, h3, h4, h5, h6")) {
         setHoverState("link");
         return;
@@ -106,13 +99,13 @@ export function CustomCursor() {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, visible]);
 
   if (!visible) return null;
 
   return (
     <motion.div
-      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] items-center justify-center -translate-x-1/2 -translate-y-1/2 font-bold font-title select-none text-[10px] tracking-widest text-center hidden md:flex"
+      className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] hidden items-center justify-center -translate-x-1/2 -translate-y-1/2 font-bold font-title select-none text-[10px] tracking-widest text-center md:flex"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
@@ -129,7 +122,7 @@ export function CustomCursor() {
         link: {
           width: 48,
           height: 48,
-          backgroundColor: "#ffffff",
+          backgroundColor: colors.foreground,
           mixBlendMode: "difference" as const,
           boxShadow: "none",
         },
