@@ -3,7 +3,8 @@ import type { Server } from "vike/types";
 import { app } from "./server/hono";
 
 const port = parseInt(
-  (typeof Deno !== "undefined" ? Deno.env.get("PORT") : process.env.PORT) || "3000",
+  (typeof Deno !== "undefined" ? Deno.env.get("PORT") : process.env.PORT) ||
+    "3000",
   10,
 );
 

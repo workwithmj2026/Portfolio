@@ -1,5 +1,5 @@
-import type { dbPostgres } from "./database/drizzle/db";
 import type { Session } from "@auth/core/types";
+import type { dbPostgres } from "./database/drizzle/db";
 
 declare global {
   namespace Vike {

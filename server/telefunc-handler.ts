@@ -1,6 +1,6 @@
-import type { dbPostgres } from "../database/drizzle/db";
 import { enhance, type UniversalHandler } from "@universal-middleware/core";
 import { telefunc } from "telefunc";
+import type { dbPostgres } from "../database/drizzle/db";
 
 // Note: You can directly define a server middleware instead of defining a Universal Middleware. (You can remove @universal-middleware/* — Vike's scaffolder uses it only to simplify its internal logic, see https://github.com/vikejs/vike/discussions/3116)
 export const telefuncHandler: UniversalHandler = enhance(

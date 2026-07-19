@@ -1,5 +1,5 @@
-import { dbPostgres } from "../database/drizzle/db";
 import { enhance, type UniversalMiddleware } from "@universal-middleware/core";
+import { dbPostgres } from "../database/drizzle/db";
 
 declare global {
   namespace Universal {

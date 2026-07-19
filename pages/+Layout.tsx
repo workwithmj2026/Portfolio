@@ -1,8 +1,8 @@
+import { AnimatePresence, motion } from "framer-motion";
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePageContext } from "vike-react/usePageContext";
 import { CustomCursor } from "../components/CustomCursor";
-import { AnimatePresence, motion } from "framer-motion";
 import "./tailwind.css";
 import "./Layout.css";
 

@@ -8,8 +8,8 @@
  */
 
 import "./server/load.ts";
-import { app } from "./server/hono.ts";
 import { serveDir } from "@std/http/file-server";
+import { app } from "./server/hono.ts";
 
 const port = parseInt(Deno.env.get("PORT") || "3000", 10);
 

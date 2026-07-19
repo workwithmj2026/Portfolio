@@ -1,6 +1,6 @@
+import { AnimatePresence, motion } from "framer-motion";
 import type React from "react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export default function Page() {
   const [step, setStep] = useState(1);

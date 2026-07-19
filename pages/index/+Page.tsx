@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const homeData = {
   hero: {
@@ -112,8 +112,12 @@ export default function Page() {
           onClick={() => setHeroInverted((v) => !v)}
           className="absolute top-6 right-8 z-10 flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium uppercase tracking-wider transition-all duration-300"
           style={{
-            borderColor: heroInverted ? "var(--hero-border)" : "var(--color-border-color)",
-            color: heroInverted ? "var(--hero-text-secondary)" : "var(--color-text-secondary)",
+            borderColor: heroInverted
+              ? "var(--hero-border)"
+              : "var(--color-border-color)",
+            color: heroInverted
+              ? "var(--hero-text-secondary)"
+              : "var(--color-text-secondary)",
           }}
           title={heroInverted ? "Switch to dark" : "Switch to light"}
         >
@@ -141,7 +145,9 @@ export default function Page() {
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl max-w-[650px] leading-relaxed"
-              style={{ color: heroInverted ? "var(--hero-text-secondary)" : undefined }}
+              style={{
+                color: heroInverted ? "var(--hero-text-secondary)" : undefined,
+              }}
             >
               {homeData.hero.description}
             </motion.p>
@@ -163,7 +169,9 @@ export default function Page() {
               }
               className="flex items-center gap-3 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 group"
               style={{
-                borderColor: heroInverted ? "var(--hero-border)" : "var(--color-border-color)",
+                borderColor: heroInverted
+                  ? "var(--hero-border)"
+                  : "var(--color-border-color)",
                 borderWidth: "1px",
                 borderStyle: "solid",
                 color: heroInverted ? "var(--hero-text)" : undefined,
@@ -172,7 +180,9 @@ export default function Page() {
               <span>Scroll</span>
               <i
                 className="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform duration-300"
-                style={{ color: heroInverted ? "var(--hero-accent)" : undefined }}
+                style={{
+                  color: heroInverted ? "var(--hero-accent)" : undefined,
+                }}
               />
             </button>
             <div className="flex gap-12 lg:gap-16">
@@ -180,13 +190,19 @@ export default function Page() {
                 <div key={c.label} className="flex flex-col">
                   <span
                     className="font-title text-4xl md:text-5xl font-extrabold"
-                    style={{ color: heroInverted ? "var(--hero-accent)" : undefined }}
+                    style={{
+                      color: heroInverted ? "var(--hero-accent)" : undefined,
+                    }}
                   >
                     {c.count}
                   </span>
                   <span
                     className="text-[10px] md:text-xs uppercase tracking-widest mt-1"
-                    style={{ color: heroInverted ? "var(--hero-text-secondary)" : undefined }}
+                    style={{
+                      color: heroInverted
+                        ? "var(--hero-text-secondary)"
+                        : undefined,
+                    }}
                   >
                     {c.label}
                   </span>

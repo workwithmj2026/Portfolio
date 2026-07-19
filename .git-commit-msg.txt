@@ -1,0 +1,7 @@
+Initial commit: Vike portfolio app scaffold
+
+Full-stack setup with Vike (React), TailwindCSS, shadcn-ui, Hono, Drizzle ORM,
+PostgreSQL, Auth.js, Sentry, Storybook, Biome, and Docker support.
+
+Includes pages (home, about-me, contact, services, work), database schema,
+server middleware, and component stories.
